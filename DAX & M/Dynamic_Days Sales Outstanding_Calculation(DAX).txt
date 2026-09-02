@@ -1,0 +1,30 @@
+DSO (Days Sales Outstanding) = 
+VAR _SelectedMinDate = MIN ( 'Date Conversion Table'[Date] )
+VAR _SelectedMaxDate = MAX ( 'Date Conversion Table'[Date] )
+
+
+VAR _DaysInPeriod = DATEDIFF ( _SelectedMinDate, _SelectedMaxDate, DAY ) + 1
+
+
+VAR _TotalAR = 
+    CALCULATE (
+        SUM ( 'Transactional Data Table'[Actual_Amount] ),
+        'GL Account Master Data Table'[GL Category] = "Receivables",
+        DATESBETWEEN ( 'Date Conversion Table'[Date], _SelectedMinDate, _SelectedMaxDate )
+    )
+
+
+VAR _TotalSales = 
+    CALCULATE (
+        SUM ( 'Transactional Data Table'[Actual_Amount] ),
+        'GL Account Master Data Table'[GL Category] = "Sales",
+        DATESBETWEEN ( 'Date Conversion Table'[Date], _SelectedMinDate, _SelectedMaxDate )
+    )
+
+RETURN
+    DIVIDE (
+        ABS ( _TotalAR ),
+        _TotalSales,
+        0
+    ) * _DaysInPeriod
+)

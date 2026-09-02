@@ -1,0 +1,5 @@
+= Table.AddColumn(#"Changed Type", "Department", each if List.Contains({"Sales", "Cost of Sales", "Travel", "Other Income", "Marketing & Sales Expenses"}, Text.Trim([GL Category])) then "Sales & Marketing" else if List.Contains({"IT Overheads", "CAPEX - Capitalized Software", "CAPEX - Infrastructure"}, Text.Trim([GL Category])) then "IT & Technology" else "Operations & Finance")
+
+= Table.AddColumn(#"Changed Type1", "OPEX", each if List.Contains({"Employees Costs", "Rent", "IT Overheads", "Travel", "Utilities, maintenance and supplies", "General & Admin", "Operation Overheads", "Insurance", "Other operating costs", "Marketing & Sales Expenses"}, Text.Trim([GL Category])) 
+then "OPEX" 
+else [GL Category])

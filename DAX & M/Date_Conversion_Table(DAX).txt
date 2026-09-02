@@ -1,0 +1,22 @@
+Date Conversion Table = 
+VAR MinYear = 2024
+VAR MaxYear = 2025
+RETURN
+ADDCOLUMNS (
+  CALENDAR ( DATE ( MinYear, 1, 1 ), DATE ( MaxYear, 12, 31 ) ),
+  "Year", YEAR ( [Date] ),
+  "Quarter_Num", QUARTER ( [Date] ),
+  "Quarter", "Q" & QUARTER ( [Date] ),
+  "Month_Num", MONTH ( [Date] ),
+  "Month_Name", FORMAT ( [Date], "mmmm", "en-US" ),
+  "Month_Short", FORMAT ( [Date], "mmm" ),
+  "Year_Month", FORMAT ( [Date], "yyyy-mm" ),
+  "Year_Month_Key", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+  "Quarter_Year", FORMAT ( [Date], "yyyy" ) & "-Q" & QUARTER ( [Date] ),
+  "Day_of_Month", DAY ( [Date] ),
+  "Day_Name", FORMAT ( [Date], "dddd" ),
+  "Is_Weekend", IF ( WEEKDAY ( [Date], 2 ) > 5, 1, 0 ),
+  "Week_of_Month", 1 + WEEKNUM ( [Date], 2 ) - WEEKNUM ( DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ), 2 ),
+  "Week_of_Month_Name", "Week " & ( 1 + WEEKNUM ( [Date], 2 ) - WEEKNUM ( DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ), 2 ) )
+)
+

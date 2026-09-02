@@ -1,0 +1,37 @@
+User_Security = 
+DATATABLE (
+  "UserEmail", STRING,
+  "Role", STRING,
+  "Company Code", STRING,
+  "Allowed Department", STRING,
+  {
+    -- ----------------------------------------------------
+    -- 997 - Centidel Group (centidelgroup.com)
+    -- ----------------------------------------------------
+    { "it.manager@centidelgroup.com", "IT Manager", "997", "IT & Technology" },
+    { "sales.manager@centidelgroup.com", "Sales Manager", "997", "Sales & Marketing" },
+    { "ops.manager@centidelgroup.com", "Operations Manager", "997", "Operations & Finance" },
+    { "cfo@centidelgroup.com", "CFO", "997", "ALL" },
+
+    -- ----------------------------------------------------
+    -- 998 - Skyndu Solutions (skyndusolutions.com)
+    -- ----------------------------------------------------
+    { "it.manager@skyndusolutions.com", "IT Manager", "998", "IT & Technology" },
+    { "sales.manager@skyndusolutions.com", "Sales Manager", "998", "Sales & Marketing" },
+    { "ops.manager@skyndusolutions.com", "Operations Manager", "998", "Operations & Finance" },
+    { "cfo@skyndusolutions.com", "CFO", "998", "ALL" },
+
+    -- ----------------------------------------------------
+    -- 999 - Cogilith Group (cogilithgroup.com)
+    -- ----------------------------------------------------
+    { "it.manager@cogilithgroup.com", "IT Manager", "999", "IT & Technology" },
+    { "sales.manager@cogilithgroup.com", "Sales Manager", "999", "Sales & Marketing" },
+    { "ops.manager@cogilithgroup.com", "Operations Manager", "999", "Operations & Finance" },
+    { "cfo@cogilithgroup.com", "CFO", "999", "ALL" },
+
+    -- ----------------------------------------------------
+    -- CEO
+    -- ----------------------------------------------------
+    { "ceo@ceskcoholding.com", "Group CEO", "ALL", "ALL" }
+  }
+)
