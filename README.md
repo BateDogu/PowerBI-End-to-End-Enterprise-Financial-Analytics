@@ -33,3 +33,7 @@ This repository contains a comprehensive, end-to-end Power BI financial analytic
 
 * 💾 [Executive Financial Dashboard.pdf](https://github.com/user-attachments/files/31718229/Executive.Financial.Dashboard.pdf)
 
+* 🎥 https://github.com/user-attachments/assets/13beb757-94ef-4bdd-b8ae-25e8e6b159c0
+
+
+
